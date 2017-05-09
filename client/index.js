@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import GTable from './components/g-table/index.jsx';
 
 function App() {
+  const accountsData = JSON.parse(document.getElementById('accounts-data').textContent);
+
   return (
     <GTable
-      data={[
-        { accountName: '@Col_Connaughton', tweetsPerDay: 1346 },
-      ]}
+      data={accountsData}
     />
   );
 }
