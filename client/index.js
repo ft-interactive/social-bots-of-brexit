@@ -1,9 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import GTable from './components/g-table/index.jsx';
 
 function App() {
   return (
-    <p>Hi, I&apos;m React.</p>
+    <GTable
+      data={[
+        { accountName: '@Col_Connaughton', tweetsPerDay: 1346 },
+      ]}
+    />
   );
 }
 
