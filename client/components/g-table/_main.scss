@@ -1,5 +1,13 @@
-div.fixedDataTableCellLayout_main {
+@import 'chart-cell/main';
+
+.fixedDataTableCellLayout_main {
   border: none;
+}
+
+.header-cell {
+  .fixedDataTableCellLayout_wrap3 {
+    vertical-align: top;
+  }
 }
 
 /**

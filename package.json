@@ -92,6 +92,7 @@
     "test": "npm run lint && npm run build"
   },
   "dependencies": {
+    "d3": "^3",
     "fixed-data-table-2": "^0.7.15",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"

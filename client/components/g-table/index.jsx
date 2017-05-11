@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Table, Column, Cell } from 'fixed-data-table-2';
+import ChartCell from './chart-cell/index.jsx';
 
 class GTable extends Component {
   constructor(props) {
@@ -8,7 +9,7 @@ class GTable extends Component {
 
     this.state = {
       data: props.data,
-      rowHeight: 40,
+      rowHeight: 84,
       headerHeight: 42,
     };
   }
@@ -16,7 +17,9 @@ class GTable extends Component {
   render() {
     const accountNameColumn = (
       <Column
-        header={<Cell>Name</Cell>}
+        header={
+          <Cell className="header-cell">Name</Cell>
+        }
         cell={props => (
           <Cell {...props}>
             {this.state.data[props.rowIndex].screenname}
@@ -26,9 +29,26 @@ class GTable extends Component {
       />
     );
 
+    const sparklineColumn = (
+      <Column
+        header={
+          <Cell className="header-cell">Tweet volume</Cell>
+        }
+        cell={props => (
+          <ChartCell
+            {...props}
+            data={this.state.data[props.rowIndex].timeseries}
+          />
+        )}
+        width={150}
+      />
+    );
+
     const tweetsPerDayColumn = (
       <Column
-        header={<Cell>Average no. tweets per day (Jun 20-26, 2016)</Cell>}
+        header={
+          <Cell className="header-cell">Average no. tweets per day (Jun 20-26, 2016)</Cell>
+        }
         cell={props => (
           <Cell
             {...props}
@@ -37,7 +57,7 @@ class GTable extends Component {
             {this.state.data[props.rowIndex].tweetsperday}
           </Cell>
         )}
-        width={170}
+        width={190}
       />
     );
 
@@ -46,11 +66,12 @@ class GTable extends Component {
         rowsCount={this.state.data.length}
         rowHeight={this.state.rowHeight}
         headerHeight={this.state.headerHeight}
-        width={300}
+        width={470}
         height={(this.state.data.length * this.state.rowHeight) + this.state.headerHeight + 2}
       >
         {accountNameColumn}
         {tweetsPerDayColumn}
+        {sparklineColumn}
       </Table>
     );
   }

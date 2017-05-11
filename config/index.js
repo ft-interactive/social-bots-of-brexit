@@ -11,6 +11,19 @@ export default async () => {
   const accountsEndpoint = `https://bertha.ig.ft.com/view/publish/gss/${accountsSheetId}/accounts`;
   const resAccounts = await axios(accountsEndpoint);
   const accountsData = resAccounts.data;
+
+  accountsData.forEach((row, i) => {
+    const r = row;
+
+    try {
+      r.timeseries = JSON.parse(r.timeseries);
+    } catch (e) {
+      row.timeseries = null;
+
+      console.log('Failed to parse timeseries for row', i);
+    }
+  });
+
   /*
   An experimental demo that gets content from the API
   and overwrites some model values. This requires the Link File
