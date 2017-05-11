@@ -9,7 +9,7 @@ class GTable extends Component {
 
     this.state = {
       data: props.data,
-      rowHeight: 84,
+      rowHeight: 68,
       headerHeight: 42,
     };
   }
@@ -18,7 +18,7 @@ class GTable extends Component {
     const accountNameColumn = (
       <Column
         header={
-          <Cell className="header-cell">Name</Cell>
+          <Cell className="header-cell">Account name</Cell>
         }
         cell={props => (
           <Cell {...props}>
@@ -40,14 +40,14 @@ class GTable extends Component {
             data={this.state.data[props.rowIndex].timeseries}
           />
         )}
-        width={150}
+        width={130}
       />
     );
 
     const tweetsPerDayColumn = (
       <Column
         header={
-          <Cell className="header-cell">Average no. tweets per day (Jun 20-26, 2016)</Cell>
+          <Cell className="header-cell">Average no. tweets/day (Jun 20-26, 2016)</Cell>
         }
         cell={props => (
           <Cell
@@ -57,7 +57,7 @@ class GTable extends Component {
             {this.state.data[props.rowIndex].tweetsperday}
           </Cell>
         )}
-        width={190}
+        width={167}
       />
     );
 
@@ -66,7 +66,7 @@ class GTable extends Component {
         rowsCount={this.state.data.length}
         rowHeight={this.state.rowHeight}
         headerHeight={this.state.headerHeight}
-        width={470}
+        width={427}
         height={(this.state.data.length * this.state.rowHeight) + this.state.headerHeight + 2}
       >
         {accountNameColumn}
