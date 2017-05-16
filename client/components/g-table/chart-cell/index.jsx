@@ -28,9 +28,9 @@ class ChartCell extends Component {
     const params = {
       width: this.width,
       height: this.height,
-      marginTop: 8,
+      marginTop: 13,
       marginRight: 8,
-      marginBottom: 8,
+      marginBottom: 13,
       marginLeft: 8,
     };
 
@@ -47,7 +47,7 @@ class ChartCell extends Component {
 }
 
 ChartCell.propTypes = {
-  data: PropTypes.array.isRequired,
+  data: PropTypes.array.isRequired, // eslint-disable-line
   width: PropTypes.number.isRequired,
   height: PropTypes.number.isRequired,
 };

@@ -17,6 +17,7 @@ class LineChart extends Component {
     this.parseDate = d3.time.format.iso.parse;
     this.line = d3.svg.line();
     this.area = d3.svg.area();
+    this.referendumDate = null;
     this.updateD3 = this.updateD3.bind(this);
 
     this.updateD3(props);
@@ -48,8 +49,6 @@ class LineChart extends Component {
       .domain([0, d3.max(this.state.series, d => d.tweet_count)])
       .range([this.height, 0]);
 
-    console.log(this.height);
-
     this.line
       .x(d => this.xScale(d.index))
       .y(d => this.yScale(d.tweet_count))
@@ -57,23 +56,58 @@ class LineChart extends Component {
 
     this.area
       .x(d => this.xScale(d.index))
-      .y0(this.height)
+      .y0(this.height + 1)
       .y1(d => this.yScale(d.tweet_count));
+
+    this.referendumDate = this.xScale(new Date('2016-06-23T00:00:00.000Z'));
   }
 
   render() {
     const translate = `translate(${this.props.marginLeft}, ${this.props.marginTop})`;
-    const line = (
-      <path
-        className="line"
-        d={this.line(this.state.series)}
+    const rule = (
+      <line
+        className="rule"
+        x1={this.referendumDate}
+        y1={-5}
+        x2={this.referendumDate}
+        y2={this.height + 6}
         transform={translate}
       />
     );
     const area = (
+      <g>
+        <linearGradient
+          id="gradient"
+          x1="0%"
+          y1="0%"
+          x2="0%"
+          y2="100%"
+        >
+          <stop
+            offset="0%"
+            stopColor="#41a5d9"
+            stopOpacity={0.6}
+          />
+
+          <stop
+            offset="100%"
+            stopColor="#41a5d9"
+            stopOpacity={0.3}
+          />
+        </linearGradient>
+
+        <path
+          className="area"
+          d={this.area(this.state.series)}
+          transform={translate}
+          fill="url(#gradient)"
+        />
+      </g>
+    );
+    const line = (
       <path
-        className="area"
-        d={this.area(this.state.series)}
+        className="line"
+        d={this.line(this.state.series)}
         transform={translate}
       />
     );
@@ -95,8 +129,9 @@ class LineChart extends Component {
       lineChart = (
         <g>
           {/* {axis} */}
-          {line}
           {area}
+          {line}
+          {rule}
         </g>
       );
     }

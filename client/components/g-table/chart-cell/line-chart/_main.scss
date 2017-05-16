@@ -1,13 +1,20 @@
 .line {
   fill: none;
-  stroke: #0F5499;
-  stroke-width: 1px;
-  opacity: 0.7;
+  stroke: #41a5d9;
+  stroke-width: 0.8px;
+  opacity: 0.8;
 }
 
 .area {
-  fill: #0F5499;
-  stroke: #0F5499;
+  stroke: none;
   stroke-width: 1px;
-  opacity: 0.4;
+  stroke-opacity: 0.4;
+  // opacity: 0.4;
+}
+
+.rule {
+  fill: none;
+  stroke: #80001e;
+  stroke-width: 1px;
+  stroke-dasharray: 4 3;
 }
