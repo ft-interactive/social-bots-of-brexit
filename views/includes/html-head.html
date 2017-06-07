@@ -75,8 +75,6 @@
 <meta name="twitter:url" content="{{ url }}">
 <meta property="og:url" content="{{ url }}">
 
-{{ accountsData | jsonScriptElement('accounts-data') }}
-
 {% if mainImage.url %}
 <link rel="image_src" href="{{ mainImage.url }}">
 {% endif %}
@@ -104,3 +102,5 @@
   <meta property="ft.track:microsite_name" content="{{ tracking.micrositeName }}"/>
   {% endif %}
 {% endif -%}
+
+{{ accountsData | jsonScriptElement('accounts-data') }}
