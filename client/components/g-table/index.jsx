@@ -25,14 +25,14 @@ class GTable extends Component {
             {this.state.data[props.rowIndex].screenname}
           </Cell>
         )}
-        width={130}
+        width={154}
       />
     );
 
     const sparklineColumn = (
       <Column
         header={
-          <Cell className="header-cell">Tweet volume</Cell>
+          <Cell className="header-cell">Tweet volume Jan 2016-May 2017</Cell>
         }
         cell={props => (
           <ChartCell
@@ -40,24 +40,24 @@ class GTable extends Component {
             data={this.state.data[props.rowIndex].timeseries}
           />
         )}
-        width={130}
+        width={131}
       />
     );
 
     const tweetsPerDayColumn = (
       <Column
         header={
-          <Cell className="header-cell">Average no. tweets/day (Jun 20-26, 2016)</Cell>
+          <Cell className="header-cell">Avg. tweets per day Jun 17-23, 2016</Cell>
         }
         cell={props => (
           <Cell
             {...props}
             style={{ textAlign: 'right' }}
           >
-            {this.state.data[props.rowIndex].tweetsperday}
+            {this.state.data[props.rowIndex].meanperdayeuref}
           </Cell>
         )}
-        width={167}
+        width={143}
       />
     );
 
@@ -66,7 +66,7 @@ class GTable extends Component {
         rowsCount={this.state.data.length}
         rowHeight={this.state.rowHeight}
         headerHeight={this.state.headerHeight}
-        width={427}
+        width={428}
         height={(this.state.data.length * this.state.rowHeight) + this.state.headerHeight + 2}
       >
         {accountNameColumn}

@@ -11,27 +11,26 @@ export default () => ({ // eslint-disable-line
   //       new Date('2016-05-17T17:11:22Z')
   publishedDate: new Date(),
 
-  headline: 'Social bots of Brexit: what are they talking about now?',
+  headline: 'Brexit bots: who are they backing in the UK election?',
 
   // summary === standfirst (Summary is what the content API calls it)
-  summary: 'Political language is designed to make lies sound truthful' +
-           'and murder respectable, and to give an appearance of solidity to pure wind',
+  summary: 'FT analysis of how the most prolific bots are responding to the UK vote on June 8',
 
   topic: {
-    name: 'Starter Kit',
-    url: '/foo',
+    name: 'UK general election',
+    url: 'https://www.ft.com/uk-general-election',
   },
 
-  relatedArticle: {
-    text: 'Related article »',
-    url: 'https://en.wikipedia.org/wiki/Politics_and_the_English_Language',
-  },
+  // relatedArticle: {
+  //   text: 'Related article »',
+  //   url: 'https://en.wikipedia.org/wiki/Politics_and_the_English_Language',
+  // },
 
   mainImage: {
     title: '',
-    description: 'George Orwell at his typewriter',
-    credit: 'Credit person',
-    url: 'https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fcom.ft.imagepublish.prod.s3.amazonaws.com%2Fc4bf0be4-7c15-11e4-a7b8-00144feabdc0?source=ig&fit=scale-down&width=700',
+    description: '',
+    credit: ' FT/Charlie Bibby',
+    url: 'https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fcom.ft.imagepublish.prod.s3.amazonaws.com%2Fed2c8786-3e06-11e7-82b6-896b95f30f58?source=ig&fit=scale-down&width=700',
     width: 2048, // ensure correct width
     height: 1152, // ensure correct height
   },
@@ -43,10 +42,10 @@ export default () => ({ // eslint-disable-line
   ],
 
   // Appears in the HTML <title>
-  title: '',
+  title: 'Brexit bots: who are they backing in the UK election?',
 
   // meta data
-  description: '',
+  description: 'FT analysis of how the most prolific bots are responding to the UK vote on June 8',
 
   /*
   TODO: Select Twitter card type -

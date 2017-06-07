@@ -85,13 +85,13 @@ class LineChart extends Component {
         >
           <stop
             offset="0%"
-            stopColor="#41a5d9"
+            stopColor="#5e82c8"
             stopOpacity={0.6}
           />
 
           <stop
             offset="100%"
-            stopColor="#41a5d9"
+            stopColor="#5e82c8"
             stopOpacity={0.3}
           />
         </linearGradient>
