@@ -1,5 +1,17 @@
 @import 'chart-cell/main';
 
+div.legend {
+  div.legend-bar {
+    display: inline-block;
+  }
+  span.legend-text {
+    vertical-align: middle;
+    margin-left: 4px;
+    font-size: 10px;
+    font-weight: 400;
+  }
+}
+
 .fixedDataTableLayout_main {
   margin: 0 auto;
 }

@@ -11,7 +11,7 @@ class GTable extends Component {
     this.state = {
       data: props.data,
       rowHeight: 68,
-      headerHeight: 42,
+      headerHeight: 68,
       pageWidth: 0,
     };
     this.handleResize = this.handleResize.bind(this);
@@ -30,7 +30,7 @@ class GTable extends Component {
   }
 
   render() {
-    const tableWidth = this.state.pageWidth >= 568 ? 433 : 290;
+    const tableWidth = this.state.pageWidth >= 568 ? 457 : 314;
     const accountNameColumn = (
       <Column
         header={
@@ -48,7 +48,29 @@ class GTable extends Component {
     const sparklineColumn = (
       <Column
         header={
-          <Cell className="header-cell">Tweets per day Jan 2016-May 2017</Cell>
+          <Cell className="header-cell">
+            <div className="title">Tweets per day, Jan 2016-May 2017</div>
+            <div className="legend">
+              <svg
+                width="20"
+                height="10"
+                xmlns="http://www.w3.org/2000/svg"
+                className="legend-bar"
+              >
+                <line
+                  x1="0"
+                  y1="7"
+                  x2="20"
+                  y2="7"
+                  stroke="#990f3d"
+                  strokeWidth="1"
+                  strokeDasharray="4, 3"
+                />
+              </svg>
+
+              <span className="legend-text">EU referendum, June 23, 2016</span>
+            </div>
+          </Cell>
         }
         cell={props => (
           <ChartCell
@@ -56,7 +78,7 @@ class GTable extends Component {
             data={this.state.data[props.rowIndex].timeseries}
           />
         )}
-        width={136}
+        width={158}
       />
     );
 
@@ -66,7 +88,7 @@ class GTable extends Component {
       tweetsPerDayColumn = (
         <Column
           header={
-            <Cell className="header-cell">Avg. tweets per day Jun 17-23, 2016</Cell>
+            <Cell className="header-cell">Avg. tweets per day, Jun 17-23, 2016</Cell>
           }
           cell={props => (
             <Cell
@@ -76,7 +98,7 @@ class GTable extends Component {
               {this.state.data[props.rowIndex].meanperdayeuref}
             </Cell>
           )}
-          width={143}
+          width={145}
         />
       );
     }
