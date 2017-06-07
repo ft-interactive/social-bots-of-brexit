@@ -1,5 +1,11 @@
 @import 'line-chart/main';
 
+div.public_fixedDataTableCell_cellContent {
+  font-feature-settings: 'tnum';
+  -webkit-font-feature-settings: 'tnum';
+  -moz-font-feature-settings: 'tnum';
+}
+
 .chart-cell {
   div.public_fixedDataTableCell_cellContent {
     padding: 0;
