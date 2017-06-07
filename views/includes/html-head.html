@@ -63,8 +63,6 @@
 <script async src="https://origami-build.ft.com/v2/bundles/js?export=oErrors&modules=o-errors@^3.5.1"></script>
 {%- endif -%}
 
-{{ accountsData | jsonScriptElement('accounts-data') }}
-
 <title>{{ title | default(headline, true) }} &mdash; FT.com</title>
 <meta name="twitter:title" content="{{ twitterHeadline | default(socialHeadline) | default(headline, true) }}">
 <meta property="og:title" content="{{ facebookHeadline | default (socialHeadline) | default(headline, true) }}">
@@ -76,6 +74,8 @@
 <link rel="canonical" href="{{ url }}">
 <meta name="twitter:url" content="{{ url }}">
 <meta property="og:url" content="{{ url }}">
+
+{{ accountsData | jsonScriptElement('accounts-data') }}
 
 {% if mainImage.url %}
 <link rel="image_src" href="{{ mainImage.url }}">
