@@ -30,7 +30,7 @@ export default () => ({ // eslint-disable-line
     title: '',
     description: '',
     credit: ' FT/Charlie Bibby',
-    url: 'https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fcom.ft.imagepublish.prod.s3.amazonaws.com%2Fed2c8786-3e06-11e7-82b6-896b95f30f58?source=ig&fit=scale-down&width=700',
+    url: 'https://www.ft.com/__origami/service/image/v2/images/raw/ftcms%3Aed2c8786-3e06-11e7-82b6-896b95f30f58?source=ig&width=700&fit=scale-down&quality=highest',
     width: 2048, // ensure correct width
     height: 1152, // ensure correct height
   },
