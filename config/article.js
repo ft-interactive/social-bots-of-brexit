@@ -9,9 +9,9 @@ export default () => ({ // eslint-disable-line
 
   // To set an exact publish date do this:
   //       new Date('2016-05-17T17:11:22Z')
-  publishedDate: new Date(),
+  publishedDate: new Date('2017-06-08T10:03:00Z'),
 
-  headline: 'Brexit bots: who are they backing in the UK election?',
+  headline: 'Brexit bots and the UK election',
 
   // summary === standfirst (Summary is what the content API calls it)
   summary: 'FT analysis of how the most prolific bots are responding to the UK vote on June 8',
@@ -42,7 +42,7 @@ export default () => ({ // eslint-disable-line
   ],
 
   // Appears in the HTML <title>
-  title: 'Brexit bots: who are they backing in the UK election?',
+  title: 'Brexit bots and the UK election',
 
   // meta data
   description: 'FT analysis of how the most prolific bots are responding to the UK vote on June 8',
