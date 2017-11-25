@@ -30,7 +30,7 @@ class GTable extends Component {
   }
 
   render() {
-    const tableWidth = this.state.pageWidth >= 568 ? 457 : 314;
+    const tableWidth = this.state.pageWidth >= 568 ? 541 : 314;
     const accountNameColumn = (
       <Column
         header={
@@ -79,6 +79,7 @@ class GTable extends Component {
           />
         )}
         width={158}
+        flexGrow={1}
       />
     );
 
